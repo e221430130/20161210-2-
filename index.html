@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+<body>
+<div id="gotop" class="img"></div>
+<p id="top_line"></p>
+<div id="header">
+	<p id="header_line"></p>
+    <div id="header_c">
+    	<div id="logo"><h1 class="logo"><a href="index.html">很好吃蔥油餅</a></h1></div>
+        <div id="btn_bg">
+        	<div id="sbtn"><a href="member_ii.html">會員登入</a>　|　<a href="member_in.html">註冊</a>　|　<a href="s1.html">購物車(<strong>0</strong>)</a>　<input id="skeyTXT" name="skeyTXT" type="text" class="box_search"/> <input type="button" class="btn_search" onclick="skey('skeyForm','search.html')"  value="搜尋"/></div>
+            <div id="btn"><a href="reviews.html">網友試吃心得</a>　　<a href="news.html">最新消息</a>　　<a href="products.html">產品介紹</a>　　<a href="notes.html">購物須知</a>　　<a href="contact.html">聯絡我們</a>　　<a href="index.html">回首頁</a></div>
+        </div>
+    </div>
+</div>
+<form name="skeyForm" id="skeyForm" method="GET" onSubmit="return false;" >
+	<input name="skey" type="text" id="skey" style="DISPLAY: none" value=""/>
+</form>
+<div id="msg_bg_a">
+	<p id="msg_t">訊息快報</p>
+    <div id="msg_c">
+		<div id="ann_box" class="ann"><div class="ann"><span style="color:#d93a15">2015-11-20</span>　<a href="news_ii.html?nID=1" title="挺好吃食品坊 網站全新開站！">挺好吃食品坊 網站全新開站！</a></div></div>
+	</div>
+</div>
+<p id="msg_bg_a_line"></p>
+<script>
+function slideLine(box,stf,delay,speed,h)
+{
+  var slideBox = document.getElementById(box);
+  var delay = delay||1000,speed = speed||20,h = h||20;
+  var tid = null,pause = false;
+  var s = function(){tid=setInterval(slide, speed);}
+  var slide = function(){
+    if(pause) return;
+    slideBox.scrollTop += 1;
+    if(slideBox.scrollTop%h == 0){
+      clearInterval(tid);
+      slideBox.appendChild(slideBox.getElementsByTagName(stf)[0]);
+      slideBox.scrollTop = 0;
+      setTimeout(s, delay);
+    }
+  }
+  slideBox.onmouseover=function(){pause=true;}
+  slideBox.onmouseout=function(){pause=false;}
+  setTimeout(s, delay);
+}
+slideLine('ann_box','div',2000,25,30);
+</script>
+<div id="line_bg"><p id="line_f">產品介紹</p><p id="line_path"><a href="index.html">首頁</a>　/　<a href="products.html">產品介紹</a>　/　內文</p></div>
+<div id="content">
+
+    <div id="pr_content">
+		<div id="pr_category">
+        	<img src="005.jpg" align="absmiddle" /> <b style="color:#663300;"很好吃蔥油餅
+           
+        	<p id="pr_category_c">產品類別：<select class="category f15_15a" onchange="if($(this).val()!=''){location.href='products.html?cID='+$(this).val()}else{location.href='products.html'}">
+              <option value="">全部</option><option selected value="1">很好吃蔥餅</option>            </select></p>
+        </div>
+        <div id="pr_cc">
+        	<div id="pr_info">
+				<p id="pr_info_p"><i></i><img src=".jpg" /></p>
+                <div id="pr_info_c">
+
+                	<p id="pr_title">挺好吃蔥餅</p>
+                    <ul>
+                        <li style="color:#c74600; font-size:22px;">NTD : 300</li>
+                        <li>購買數量　<input name="gAmount" id="gAmount" maxlength="3" value="1" type="text" class="box f15_15a" style="width:80px;"/></li>
+																		<li><span style="color: #ff0000; font-family: 標楷體,DFKai-sb; font-size: 14pt;"><span style="color: #ff0000; font-family: 標楷體,DFKai-sb;"><span style="color: #000000;">一包10片裝(每片170g正負5%)</span></span><br />本公司<span style="font-family: 標楷體;">產品完全純手工製成</span>(購買猪油板自炸成油)安全衛生</span></li>
+						                    </ul>
+</body>
+</html>
